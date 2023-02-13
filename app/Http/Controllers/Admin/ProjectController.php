@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
+
 use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
@@ -39,9 +41,11 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
+        $technologies= Technology::all();
 
         return view("admin.projects.create",[
-            "types"=>$types
+            "types"=>$types,
+            "technologies"=>$technologies
         ]);
     }
     /**
@@ -63,6 +67,10 @@ class ProjectController extends Controller
                 "img_cover"=> $path ?? '',
                 "user_id"=> Auth::id()
         ]);
+
+        if($request->has("technologies")){
+            $singleProject->technologies()->attach($data["technologies"]);
+        }
 
         return redirect()->route("admin.projects.show", $singleProject->id);
     }
@@ -90,10 +98,13 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
+        $technologies = Technology::all();
+
 
         return view("admin.projects.edit", [
             "project" => $project,
-            "types"=>$types
+            "types"=>$types,
+            "technologies"=>$technologies
         ]);
     }
 
@@ -123,6 +134,8 @@ class ProjectController extends Controller
 
         ]);
 
+        $project->technolgies()->sync($data["technologies"]);
+
         return redirect()-> route("admin.projects.show", $project->id);
     }
 
@@ -139,6 +152,8 @@ class ProjectController extends Controller
         if($project->img_cover){
             Storage::delete($project->img_cover);
         }
+        $project->technologies()->detach();
+
         $project ->delete();
 
         return redirect()->route("admin.projects.index");
