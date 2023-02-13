@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tecnology;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 
-class TecnologyController extends Controller
+class TechnologyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TecnologyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tecnology  $tecnology
+     * @param  \App\Models\Technology  $technology
      * @return \Illuminate\Http\Response
      */
-    public function show(Tecnology $tecnology)
+    public function show(Technology $technology)
     {
         //
     }
@@ -52,10 +52,10 @@ class TecnologyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tecnology  $tecnology
+     * @param  \App\Models\Technology  $technology
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tecnology $tecnology)
+    public function edit(Technology $technology)
     {
         //
     }
@@ -64,10 +64,10 @@ class TecnologyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tecnology  $tecnology
+     * @param  \App\Models\Technology  $technology
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tecnology $tecnology)
+    public function update(Request $request, Technology $technology)
     {
         //
     }
@@ -75,10 +75,10 @@ class TecnologyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tecnology  $tecnology
+     * @param  \App\Models\Technology  $technology
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tecnology $tecnology)
+    public function destroy(Technology $technology)
     {
         //
     }
