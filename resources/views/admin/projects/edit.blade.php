@@ -63,6 +63,25 @@
             @enderror
         </div>
 
+        <div class="mb-3">
+            
+            @foreach ($technologies as $technology)
+              <div class="form-check form-check-inline @error('technologies') is-invalid @enderror">
+                
+                <input class="form-check-input @error('technologies') is-invalid @enderror" type="checkbox"
+                  id="tagCheckbox_{{ $loop->index }}" value="{{ $technology->id }}" name="technologies[]"
+                 
+                  {{ $project->technologies->contains('id', $technology->id) ? 'checked' : '' }}>
+                <label class="form-check-label" for="tagCheckbox_{{ $loop->index }}">{{ $technology->name }} ({{ $technology->posts->count() }})</label>
+              </div>
+            @endforeach
+
+            @error('technologies')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
 
 
         <div class="mb-3">
