@@ -134,7 +134,7 @@ class ProjectController extends Controller
 
         ]);
 
-        $project->technolgies()->sync($data["technologies"]);
+        $project->technologies()->sync($data["technologies"]);
 
         return redirect()-> route("admin.projects.show", $project->id);
     }
