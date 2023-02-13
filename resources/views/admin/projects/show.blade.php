@@ -18,6 +18,11 @@
         <div class="card-title">{{ $project->name }}</div>
         <p class="card-text">{{ $project->description }}</p>
         <p class="card-text">{{ $project->type ? $project->type->typeName : ' ' }}</p>
+        <div class="card-text">Technologies:
+            @foreach ($project->technologies as $technology)
+              <span class="badge rounded-pill text-bg-primary">{{ $technology->name }}</span>
+            @endforeach
+          </div>
         <p class="card-text">{{ $project->link_project }}</p>
         <p class="card-text">{{ $project->creation_date }}</p>
 
