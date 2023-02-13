@@ -30,12 +30,12 @@
                                     <td>{{ $singleProject->name }}</td>
                                     <td>{{ $singleProject->Description }}</td>
                                     <td>{{ $singleProject->type ? $singleProject->type->typeName : ' ' }}</td>
-                                    <td>
+                                    
                                         @foreach($singleProject->technologies as $technology)
                                             {{$technology->name.''}}
                                         @endforeach
 
-                                    </td>
+                                    
                                     <td>{{ $singleProject->link_project }}</td>
                                     <td>{{ $singleProject->creation_date }}</td>
                                     <td>

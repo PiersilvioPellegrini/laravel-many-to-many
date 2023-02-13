@@ -55,12 +55,10 @@ class StoreProjectRequest extends FormRequest
             "link_project.min" => "lunghezza minima 20 caratteri",
 
             "creation_date.require" => "il campo è obbligatorio",
-            "creation_date.date" => "è richiesta una data",
+            "creation_date.date" => "è richiesta una un dato di tipo data",
 
             "type_id.nullable" => "non hai inserito nessuna categoria",
 
-
-            "technologies.nullable" => "non hai inserito nessuna tecnolgia per questo progetto",
 
         ];
     }

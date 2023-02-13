@@ -72,7 +72,7 @@
                   id="tagCheckbox_{{ $loop->index }}" value="{{ $technology->id }}" name="technologies[]"
                  
                   {{ $project->technologies->contains('id', $technology->id) ? 'checked' : '' }}>
-                <label class="form-check-label" for="tagCheckbox_{{ $loop->index }}">{{ $technology->name }} ({{ $technology->posts->count() }})</label>
+                <label class="form-check-label" for="tagCheckbox_{{ $loop->index }}">{{ $technology->name }} </label>
               </div>
             @endforeach
 
